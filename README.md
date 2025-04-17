@@ -16,6 +16,7 @@ Clients should not be forced to depend on methods they do not use.
 
 
 Project Architecture Overview
+
 ./CleanArchitecture
 ├── Application                # App entry points and setup
 │   ├── AppDelegate.swift
