@@ -15,9 +15,11 @@ Clients should not be forced to depend on methods they do not use.
 ➡️ Instead of one large interface, create smaller, more specific ones.
 
 
-Project Architecture Overview
-
-./CleanArchitecture
+<details>
+  <summary>Project Tree Structure</summary>
+  
+  ```
+  ./CleanArchitecture
 ├── Application                # App entry points and setup
 │   ├── AppDelegate.swift
 │   ├── SceneDelegate.swift
@@ -97,6 +99,8 @@ Project Architecture Overview
 └── base                      # Intro/launch screen
     ├── Intro.storyboard
     └── IntroViewController.swift
+  ```
+</details>
 
 
 🧰 Used Technologies
