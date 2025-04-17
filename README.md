@@ -104,6 +104,7 @@ Clients should not be forced to depend on methods they do not use.
 
 
 🧰 Used Technologies
+
 Architecture: Clean Architecture
 
 Frameworks & Reactive Programming: SwiftUI + Combine
