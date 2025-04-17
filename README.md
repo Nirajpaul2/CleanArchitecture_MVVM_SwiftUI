@@ -16,88 +16,86 @@ Clients should not be forced to depend on methods they do not use.
 
 
 Project Architecture Overview
-
-  ./CleanArchitecture
-  ├── Application
-  │   ├── AppDelegate.swift
-  │   ├── SceneDelegate.swift
-  │   └── ViewControllerFactory.swift
-  ├── Core
-  │   ├── Dependency
-  │   │   └── DIContainer.swift
-  │   ├── Navigation
-  │   │   ├── AppRouter.swift
-  │   │   ├── CouponRoute.swift
-  │   │   ├── CultureCenterRoute.swift
-  │   │   ├── CustomNavigationContainer.swift
-  │   │   ├── HomeRoute.swift
-  │   │   └── NavigationProtocol.swift
-  │   └── Util
-  │       └── StringExtension.swift
-  ├── Data
-  │   ├── Model
-  │   │   ├── Coupon
-  │   │   ├── CultureCenter
-  │   │   ├── Home
-  │   │   └── bridge
-  │   ├── Network
-  │   │   ├── API
-  │   │   ├── Common
-  │   │   ├── Config
-  │   │   ├── Foundation
-  │   │   └── Service
-  │   ├── Repository
-  │   │   ├── Coupon
-  │   │   ├── CultureCenter
-  │   │   ├── DefaultCultureSearchResultRepository.swift
-  │   │   └── HomeRepository.swift
-  │   └── Transform
-  │       └── HomeTransform.swift
-  ├── Domain
-  │   ├── Entity
-  │   │   ├── Coupon
-  │   │   ├── CultureLecture.swift
-  │   │   ├── FoodBanner.swift
-  │   │   └── HomeEntity.swift
-  │   ├── Interface
-  │   │   ├── CultureSearchResultRepository.swift
-  │   │   └── HomeRepositoryInterface.swift
-  │   └── UseCase
-  │       ├── CouponUsecase.swift
-  │       ├── CultureSearchListUseCase.swift
-  │       └── HomeUseCase.swift
-  ├── Global
-  │   ├── Resources
-  │   │   └── Assets.xcassets
-  │   └── SupportingFiles
-  │       ├── Base.lproj
-  │       └── Info.plist
-  └── Presentation
-      ├── Common
-      │   ├── Button
-      │   ├── CustomNavigationBar.swift
-      │   ├── NavigationTitle.swift
-      │   └── ToastView.swift
-      ├── Coupon
-      │   ├── Screen
-      │   ├── ViewModel
-      │   └── Views
-      ├── CultureCenter
-      │   ├── View
-      │   ├── ViewController
-      │   ├── ViewModel
-      │   └── CultureCenterWrapper.swift
-      ├── Home
-      │   ├── HomeScreen.swift
-      │   └── HomeViewModel.swift
-      ├── MainTab
-      │   ├── MainTabType.swift
-      │   └── MainTabViewController.swift
-      ├── WebView
-      │   └── BaseWebView.swift
-      └── base
-          ├── Intro.storyboard
-          └── IntroViewController.swift
+./CleanArchitecture
+├── Application                # App entry points and setup
+│   ├── AppDelegate.swift
+│   ├── SceneDelegate.swift
+│   └── ViewControllerFactory.swift
+│
+├── Core                      # Shared infrastructure
+│   ├── Dependency
+│   │   └── DIContainer.swift    # Dependency injection (Swinject)
+│   ├── Navigation
+│   │   ├── AppRouter.swift      # Root navigation logic
+│   │   ├── CouponRoute.swift    # Coupon navigation routes
+│   │   ├── CultureCenterRoute.swift
+│   │   ├── CustomNavigationContainer.swift  # SwiftUI navigation wrapper
+│   │   └── NavigationProtocol.swift
+│   └── Util
+│       └── StringExtension.swift
+│
+├── Data                      # Data Layer
+│   ├── Network
+│   │   ├── API                 # Moya API definitions (TargetType)
+│   │   ├── Service            # Network service implementations
+│   │   └── MoyaProvider.swift # Moya configuration
+│   ├── Repository
+│   │   ├── Coupon             # Coupon repository implementation
+│   │   ├── CultureCenter      # CultureCenter repository impl.
+│   │   └── HomeRepository.swift
+│   ├── Model
+│   │   ├── DTO                # Data Transfer Objects (API responses)
+│   │   │   ├── CouponDTO.swift
+│   │   │   └── HomeDTO.swift
+│   │   └── Bridge             # JS ↔ Native bridge logic
+│   └── Transform
+│       └── HomeTransform.swift # DTO → Entity mapping
+│
+├── Domain                    # Domain Layer (Business Logic)
+│   ├── Entity
+│   │   ├── Coupon             # Domain entities (pure business models)
+│   │   ├── CultureLecture.swift
+│   │   └── HomeEntity.swift
+│   ├── UseCase
+│   │   ├── CouponUseCase.swift   # Business logic for coupons
+│   │   ├── CultureSearchListUseCase.swift
+│   │   └── HomeUseCase.swift
+│   └── Interface
+│       ├── CouponRepositoryInterface.swift # Data access contracts
+│       └── HomeRepositoryInterface.swift
+│
+├── Presentation              # Presentation Layer (UI)
+│   ├── Common                # Shared UI components
+│   │   ├── CustomNavigationBar.swift
+│   │   ├── ToastView.swift
+│   │   └── Button
+│   ├── Coupon                # Coupon feature
+│   │   ├── Screen            # SwiftUI/UIKit screens
+│   │   ├── ViewModel         # CouponViewModel
+│   │   └── Views             # Subviews (e.g., CouponListView)
+│   ├── CultureCenter         # CultureCenter feature
+│   │   ├── View
+│   │   ├── ViewModel
+│   │   └── CultureCenterWrapper.swift
+│   ├── Home                  # Home feature
+│   │   ├── HomeScreen.swift
+│   │   └── HomeViewModel.swift
+│   ├── MainTab               # Tab navigation
+│   │   ├── MainTabType.swift
+│   │   └── MainTabViewController.swift
+│   └── WebView
+│       └── BaseWebView.swift # WebView wrapper (SwiftUI/UIKit)
+│
+├── Global                    # Resources & config
+│   ├── Resources
+│   │   └── Assets.xcassets   # Images, colors, etc.
+│   └── SupportingFiles
+│       ├── Info.plist
+│       └── Base.lproj        # Localization
+│
+└── base                      # Intro/launch screen
+    ├── Intro.storyboard
+    └── IntroViewController.swift
 
 
 🧰 Used Technologies
