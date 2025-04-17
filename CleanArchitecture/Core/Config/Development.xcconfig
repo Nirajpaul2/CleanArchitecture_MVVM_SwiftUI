@@ -1,0 +1,10 @@
+//
+//  Release.xcconfig
+//  CleanArchitecture
+//
+//  Created by Niraj Paul on 1/1/25.
+//
+
+EHYUNDAI_BASE_URL = https:/$()/dev.ehyundai.com:18011
+EHYUNDAI_APP_BASE_URL = https:/$()/hdeappdev.ehyundai.com:18911
+HPOINT_BASE_URL = https:/$()/mdev.h-point.co.kr:29845
