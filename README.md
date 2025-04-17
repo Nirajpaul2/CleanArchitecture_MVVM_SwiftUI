@@ -1,7 +1,7 @@
 # Clean Architecture
 This project follows Clean Architecture principles to ensure a well-structured and maintainable codebase. It's designed to be compatible with both UIKit and SwiftUI, focusing on separation of concerns, testability, and modular development.
 
-## Clean Architecture 주요 원칙
+## Clean Architecture
 1. Dependency Inversion Principle (DIP)
 High-level modules should not depend on low-level modules. Both should depend on abstractions. Abstractions should not depend on details, but details should depend on abstractions.
 ➡️ For example, implementations in the Domain Layer do not directly depend on outer layers. Instead, dependencies are inverted through protocols (e.g., repository interfaces), which keeps business logic isolated from infrastructure details.
