@@ -1,3 +1,6 @@
+# Medium Article link
+https://nirajpaul2.medium.com/mvvm-architecture-103af2497b5a
+
 # Clean Architecture
 This project follows Clean Architecture principles to ensure a well-structured and maintainable codebase. It's designed to be compatible with both UIKit and SwiftUI, focusing on separation of concerns, testability, and modular development.
 
