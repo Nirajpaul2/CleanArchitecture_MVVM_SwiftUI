@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		612F23892D3FC7CE00AD2BA2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 612F23882D3FC7CE00AD2BA2 /* Kingfisher */; };
 		615E9B472D47AF9500D98562 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 615E9B462D47AF9500D98562 /* Swinject */; };
-		61EBF8C72D61F9BD00937486 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 61EBF8C62D61F9BD00937486 /* .gitignore */; };
 		CC05FF1D2D2A46250051A528 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = CC05FF1C2D2A46250051A528 /* Differentiator */; };
 		CC05FF1F2D2A46250051A528 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = CC05FF1E2D2A46250051A528 /* RxDataSources */; };
 		CC2ABD422D2A8586008EE52F /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = CC2ABD412D2A8586008EE52F /* CombineMoya */; };
@@ -19,7 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		61EBF8C62D61F9BD00937486 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		CC367D462D2A15CC00F86532 /* CleanArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -66,7 +64,6 @@
 		CC367D3D2D2A15CC00F86532 = {
 			isa = PBXGroup;
 			children = (
-				61EBF8C62D61F9BD00937486 /* .gitignore */,
 				612F23412D3B420D00AD2BA2 /* CleanArchitecture */,
 				CC367D472D2A15CC00F86532 /* Products */,
 			);
@@ -159,7 +156,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61EBF8C72D61F9BD00937486 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
